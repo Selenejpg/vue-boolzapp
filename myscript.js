@@ -1,10 +1,10 @@
 var app = new Vue({
-    el: '#app',
+    el: '#root',
     data: {
       contacts: [
         {
             name: 'Michele',
-            avatar: '_1',
+            avatar: './img-boolzap/avatar_1.jpg',
             visible: true,
             messages: [
                 {
@@ -26,7 +26,7 @@ var app = new Vue({
         },
         {
             name: 'Fabio',
-            avatar: '_2',
+            avatar: './img-boolzap/avatar_2.jpg',
             visible: true,
             messages: [
                 {
@@ -48,7 +48,7 @@ var app = new Vue({
         },
         {
             name: 'Samuele',
-            avatar: '_3',
+            avatar: './img-boolzap/avatar_3.jpg',
             visible: true,
             messages: [
                 {
@@ -70,7 +70,7 @@ var app = new Vue({
         },
         {
             name: 'Alessandro B.',
-            avatar: '_4',
+            avatar: './img-boolzap/avatar_4.jpg',
             visible: true,
             messages: [
                 {
@@ -87,7 +87,7 @@ var app = new Vue({
         },
         {
             name: 'Alessandro L.',
-            avatar: '_5',
+            avatar: './img-boolzap/avatar_5.jpg',
             visible: true,
             messages: [
                 {
@@ -104,7 +104,7 @@ var app = new Vue({
         },
         {
             name: 'Claudia',
-            avatar: '_6',
+            avatar: './img-boolzap/avatar_6.jpg',
             visible: true,
             messages: [
                 {
@@ -126,7 +126,7 @@ var app = new Vue({
         },
         {
             name: 'Federico',
-            avatar: '_7',
+            avatar: './img-boolzap/avatar_7.jpg',
             visible: true,
             messages: [
                 {
@@ -143,7 +143,7 @@ var app = new Vue({
         },
         {
             name: 'Davide',
-            avatar: '_8',
+            avatar: './img-boolzap/avatar_8.jpg',
             visible: true,
             messages: [
                 {

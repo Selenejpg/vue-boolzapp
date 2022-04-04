@@ -51,12 +51,12 @@
                         <!-- contenitore chats -->
                         <div class="">
                             <ul class="list-group list-group-flush">
-                                <li class="d-flex justify-content-between align-items-center list-group-item p-3">
+                                <li class="d-flex justify-content-between align-items-center list-group-item p-3"  v-for="chat in contacts" :key="chat.avatar" :key="chat.name"> 
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex align-items-center ">
-                                            <img src="./img-boolzap/avatar_1.jpg" alt="profilo" class="rounded-circle img-profile me-3">
+                                            <img :src="chat.avatar" alt="profilo" class="rounded-circle img-profile me-3">
                                             <div>
-                                                <span>Nome Cognome</span>
+                                                <span>{{chat.name}}</span>
                                                 <span class="d-block fs-custom  light-gray">Ultimo messaggio inviato</span>
                                             </div>
                                         </div>
@@ -64,21 +64,7 @@
                                             <span class="ms-3 light-gray">12:00</span>
                                         </div>
                                     </div>
-                                </li>
-                                <li class="d-flex justify-content-between align-items-center list-group-item p-3">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="d-flex align-items-center ">
-                                            <img src="./img-boolzap/avatar_2.jpg" alt="profilo" class="rounded-circle img-profile me-3">
-                                            <div>
-                                                <span>Nome Cognome</span>
-                                                <span class="d-block fs-custom  light-gray">Ultimo messaggio inviato</span>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <span class="ms-3 light-gray">12:00</span>
-                                        </div>
-                                    </div>
-                                </li>
+                                </li>  
                             </ul>
                         </div>
                     </div>
