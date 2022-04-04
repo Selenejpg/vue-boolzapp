@@ -1,0 +1,25 @@
+p {
+    margin-bottom: 0;
+}
+
+.sfondo {
+    height: 100vh;
+    border: 3px solid cornflowerblue;
+}
+
+.img-profile{
+    width: 80px;
+    height: 80px;
+}
+
+.bg_light_blue {
+    background-color: #99dafd;
+}
+
+.light_blue{
+    color: #99dafd;
+}
+
+.light-gray{
+    color: #718698;
+}
