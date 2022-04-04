@@ -2,9 +2,8 @@ p {
     margin-bottom: 0;
 }
 
-.sfondo {
-    height: 100vh;
-    border: 3px solid cornflowerblue;
+ul{
+    margin-left: 0!important;
 }
 
 .img-profile{
@@ -21,5 +20,9 @@ p {
 }
 
 .light-gray{
-    color: #718698;
+    color: #b0b1b3;
+}
+
+.fs-custom{
+    font-size: 14px;
 }
