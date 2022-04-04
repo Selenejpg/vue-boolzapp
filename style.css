@@ -6,9 +6,34 @@ ul{
     margin-left: 0!important;
 }
 
+.sfondo{
+    height: 100vh;
+    background-image: linear-gradient(to bottom,
+    #359589 0px,
+    #359589 15vh,
+    #d9dbd7 15vh,
+    #d9dbd7 100%);
+}
+
+.sfondo-due{
+    background-image: linear-gradient(to bottom,
+    #e9eaed 0px,
+    #e9eaed 95px,
+    #ffffff 95px,
+    #ffffff 100%);
+}
+
+.custom-padding{
+    padding-left: 0!important;
+}
+
+.border-custom {
+    border: 1px solid #b0b1b3;
+}
+
 .img-profile{
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
 }
 
 .bg_light_blue {
