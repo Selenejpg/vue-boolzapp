@@ -23,8 +23,13 @@ ul{
     #ffffff 100%);
 }
 
+.sfondo-chats{
+    background-image: url(./img-boolzap/mine.jpg);
+}
+
 .custom-padding{
     padding-left: 0!important;
+    padding-right: 0!important;
 }
 
 .border-custom {
@@ -50,4 +55,13 @@ ul{
 
 .fs-custom{
     font-size: 14px;
+}
+
+.text-sent{
+    background-color: #d8f8bf;
+    border-radius: 20px;
+}
+
+.bg-beige{
+    background-color: #f2eeed;
 }

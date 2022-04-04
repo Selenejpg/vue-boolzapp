@@ -13,14 +13,12 @@
     <title>Boolzap</title>
 </head>
 <body>
-    
-
     <div id="root">
         <div class="sfondo py-5">
-            <div class="container sfondo-due h-100">
-                <div class="row">
-                     <!-- colonna sinistra -->
-                     <!-- sezione con profilo utente -->
+            <div class="container sfondo-due overflow-auto h-100">
+                <div class="row h-100">
+                        <!-- colonna sinistra -->
+                        <!-- sezione con profilo utente -->
                     <div class="col-4 custom-padding">
                         <div class="d-flex border-custom justify-content-between align-items-center p-3">
                             <div class="d-flex align-items-center ">
@@ -84,9 +82,9 @@
                             </ul>
                         </div>
                     </div>
-                     <!-- colonna destra -->
-                    <div class="col-8">
-                        <!-- header colonna destra -->
+                    <!-- colonna destra -->
+                    <!-- header colonna destra -->
+                    <div class="col-8 d-flex flex-column justify-content-between custom-padding">
                         <div class="d-flex justify-content-between align-items-center p-3">
                             <div class="d-flex align-items-center ">
                                 <img src="./img-boolzap/avatar_1.jpg" alt="profilo" class="rounded-circle img-profile me-3">
@@ -100,10 +98,25 @@
                                 <i class="fa-solid light-gray me-2 fa-paperclip"></i>
                                 <i class="fa-solid light-gray fa-ellipsis-vertical"></i>
                             </div>
-                        <!--contenuto chats  -->
-                        <div class="sfondo-chats">
-
                         </div>
+                            <!--contenuto chats  -->
+                        <div class="sfondo-chats h-100 p-3">
+                            <ul class="list-group list-group-flush d-flex flex-column">
+                                <li class="list-group-item rounded-3 mb-3 text-sent align-self-end">
+                                    test
+                                </li>
+                                <li class="list-group-item align-self-start rounded-3">
+                                    test
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- footer colonna destra -->
+                        <div class="d-flex align-items-center bg-beige p-3">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-beige light-gray" id="inputGroup-sizing-sm"><i class="fa-regular fa-face-smile"></i></span>
+                                <input type="text" placeholder="Scrivi un messaggio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                <span class="input-group-text bg-beige light-gray" id="inputGroup-sizing-sm"><i class="fa-solid fa-microphone"></i></span>
+                            </div>
                         </div>
                     </div>
                 </div>
