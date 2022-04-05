@@ -165,7 +165,7 @@ var app = new Vue({
         }
     ],
     indexChanged: 0,
-    newMessageText: ''
+    newMessageText: '',
 },
     methods: {
         changeContactsIndex: function(index){
@@ -186,9 +186,18 @@ var app = new Vue({
 
             let newMessageObjectReceived = {
                 date: `${currentDate} ${hour}:${minute}`,
+                hour: `${hour}:${minute}`,
                 message: 'Ok.',
                 status: 'received'
             }
+            this.contacts[this.indexChanged].messages.push(newMessageObject);
+
+            setTimeout (
+                () => {
+                this.contacts[this.indexChanged].messages.push(newMessageObjectReceived);
+            }, 3000)
+
+            
         }
     }
   })

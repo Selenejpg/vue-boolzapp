@@ -51,12 +51,12 @@
                         <!-- contenitore chats -->
                         <div class="overflow-scroll">
                             <ul class="list-group list-group-flush">
-                                <li class="d-flex justify-content-between align-items-center list-group-item p-3 overflow-auto"  v-for="chat in contacts" :key="chat.avatar" :key="chat.name" @click="changeContactsIndex(index)"> 
+                                <li class="d-flex justify-content-between align-items-center list-group-item p-3 overflow-auto"  v-for="(element, index) in contacts" :key="element.avatar" :key="element.name" role="button" @click="changeContactsIndex(index)"> 
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex align-items-center ">
-                                            <img :src="`./img-boolzap/avatar${chat.avatar}.jpg`" alt="foto profilo di ${chat.name}" class="rounded-circle img-profile me-3">
+                                            <img :src="`./img-boolzap/avatar${element.avatar}.jpg`" alt="foto profilo di ${element.name}" class="rounded-circle img-profile me-3">
                                             <div>
-                                                <span>{{chat.name}}</span>
+                                                <span>{{element.name}}</span>
                                                 <span class="d-block fs-custom  light-gray">Ultimo messaggio inviato</span>
                                             </div>
                                         </div>
@@ -88,19 +88,17 @@
                             <!--contenuto chats  -->
                         <div class="sfondo-chats h-100 p-3">
                             <ul class="list-group list-group-flush d-flex flex-column">
-                                <li class="list-group-item rounded-3 mb-3 text-sent align-self-end">
-                                    test
-                                </li>
-                                <li class="list-group-item align-self-start rounded-3">
-                                    test
-                                </li>
+                                <li class="list-group-item rounded-3 mb-3 text-sent align-self-end" :class="(element.status == 'sent') ? 'align-self-end text-sent' : 'align-self-start received' " v-for="(element, index) in contacts[indexChanged].messages">
+                                    {{element.message}}
+                                    <p class="text-end fs-custom">{{element.date}}</p>
+                                </li>   
                             </ul>
                         </div>
                         <!-- footer colonna destra -->
                         <div class="d-flex align-items-center bg-beige p-3">
                             <div class="input-group input-group-sm">
                                 <span class="input-group-text bg-beige light-gray" id="inputGroup-sizing-sm"><i class="fa-regular fa-face-smile"></i></span>
-                                <input type="text" placeholder="Scrivi un messaggio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                <input type="text" placeholder="Scrivi un messaggio" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" v-model="newMessageText" @keyup.enter="newMessage">
                                 <span class="input-group-text bg-beige light-gray" id="inputGroup-sizing-sm"><i class="fa-solid fa-microphone"></i></span>
                             </div>
                         </div>
