@@ -88,7 +88,7 @@
                             <!--contenuto chats  -->
                         <div class="sfondo-chats h-100 p-3">
                             <ul class="list-group list-group-flush d-flex flex-column">
-                                <li class="list-group-item rounded-3 mb-3 text-sent align-self-end" :class="(element.status == 'sent') ? 'align-self-end text-sent' : 'align-self-start received' " v-for="(element, index) in contacts[indexChanged].messages">
+                                <li class="list-group-item rounded-3 mb-3 text-sent" :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received' " v-for="(element, index) in contacts[indexChanged].messages">
                                     {{element.message}}
                                     <p class="text-end fs-custom">{{element.date}}</p>
                                 </li>   
