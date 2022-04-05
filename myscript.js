@@ -4,7 +4,7 @@ var app = new Vue({
       contacts: [
         {
             name: 'Michele',
-            avatar: './img-boolzap/avatar_1.jpg',
+            avatar: '_1',
             visible: true,
             messages: [
                 {
@@ -26,7 +26,7 @@ var app = new Vue({
         },
         {
             name: 'Fabio',
-            avatar: './img-boolzap/avatar_2.jpg',
+            avatar: '_2',
             visible: true,
             messages: [
                 {
@@ -48,7 +48,7 @@ var app = new Vue({
         },
         {
             name: 'Samuele',
-            avatar: './img-boolzap/avatar_3.jpg',
+            avatar: '_3',
             visible: true,
             messages: [
                 {
@@ -70,7 +70,7 @@ var app = new Vue({
         },
         {
             name: 'Alessandro B.',
-            avatar: './img-boolzap/avatar_4.jpg',
+            avatar: '_4',
             visible: true,
             messages: [
                 {
@@ -87,7 +87,7 @@ var app = new Vue({
         },
         {
             name: 'Alessandro L.',
-            avatar: './img-boolzap/avatar_5.jpg',
+            avatar: '_5',
             visible: true,
             messages: [
                 {
@@ -104,7 +104,7 @@ var app = new Vue({
         },
         {
             name: 'Claudia',
-            avatar: './img-boolzap/avatar_6.jpg',
+            avatar: '_6',
             visible: true,
             messages: [
                 {
@@ -126,7 +126,7 @@ var app = new Vue({
         },
         {
             name: 'Federico',
-            avatar: './img-boolzap/avatar_7.jpg',
+            avatar: '_7',
             visible: true,
             messages: [
                 {
@@ -143,7 +143,7 @@ var app = new Vue({
         },
         {
             name: 'Davide',
-            avatar: './img-boolzap/avatar_8.jpg',
+            avatar: '_8',
             visible: true,
             messages: [
                 {
@@ -163,7 +163,31 @@ var app = new Vue({
                 }
             ],
         }
-    ]
+    ]}
+    methods: {
+        changeContactsIndex: function(index){
+            console.log(index);
+            this.indexChanged = index;
+            console.log(`l'indice è diventato: ${this.index.Changed}`);
+        },
+        newMessage: function () {
+            let currentDate = dayjs().format('DD/MM/YYYY');
+            let hour = dayjs().get('hour');
+            let minute = dayjs().get('minute');
+
+            let newMessageObject = {
+                date: `${currentDate} ${hour}:${minute}`,
+                message: this.newMessageText,
+                status: 'sent'
+            }
+
+            let newMessageObjectReceived = {
+                date: `${currentDate} ${hour}:${minute}`,
+                message: 'Ok.',
+                status: 'received'
+            }
+        }
+
     }
   })
 
