@@ -163,12 +163,15 @@ var app = new Vue({
                 }
             ],
         }
-    ]}
+    ],
+    indexChanged: 0,
+    newMessageText: ''
+},
     methods: {
         changeContactsIndex: function(index){
             console.log(index);
             this.indexChanged = index;
-            console.log(`l'indice è diventato: ${this.index.Changed}`);
+            console.log(`l'indice è diventato: ${this.indexChanged}`);
         },
         newMessage: function () {
             let currentDate = dayjs().format('DD/MM/YYYY');
@@ -187,7 +190,6 @@ var app = new Vue({
                 status: 'received'
             }
         }
-
     }
   })
 
