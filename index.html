@@ -49,9 +49,9 @@
                             </div>
                         </div>
                         <!-- contenitore chats -->
-                        <div class="">
-                            <ul class="list-group list-group-flush">
-                                <li class="d-flex justify-content-between align-items-center overflow-scroll list-group-item p-3 overflow-auto"  v-for="(element, index) in contacts" :key="element.avatar" :key="element.name" role="button" @click="changeContactsIndex(index)"> 
+                        <div class="h-custom overflow-scroll">
+                            <ul class="list-group list-group-flush h-custom-due">
+                                <li class="d-flex justify-content-between align-items-center h-custom-tre list-group-item p-3"  v-for="(element, index) in contacts" :key="element.avatar" :key="element.name" role="button" @click="changeContactsIndex(index)"> 
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex align-items-center ">
                                             <img :src="`./img-boolzap/avatar${element.avatar}.jpg`" alt="foto profilo di ${element.name}" class="rounded-circle img-profile me-3">

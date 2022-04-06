@@ -70,3 +70,15 @@ ul{
 .bg-beige{
     background-color: #f2eeed;
 }
+
+.h-custom{
+    height: 80%;
+    max-height: 62vh;
+}
+
+.h-custom-due{
+    height: 70%;
+}
+.h-custom-tre{
+    height: 60%;
+}
