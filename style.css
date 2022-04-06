@@ -33,7 +33,7 @@ ul{
 }
 
 .border-custom {
-    border: 1px solid #b0b1b3;
+    border-right: 1px solid #b0b1b3;
 }
 
 .img-profile{
@@ -73,12 +73,22 @@ ul{
 
 .h-custom{
     height: 80%;
-    max-height: 62vh;
+    max-height: 63vh;
 }
 
 .h-custom-due{
     height: 70%;
 }
+
 .h-custom-tre{
     height: 60%;
+}
+
+.custom-select{
+    width: 10px;
+    border-color: #d8f8bf;
+    background-color: #d8f8bf;
+}
+.form-select{
+    display: inline!important;
 }

@@ -180,6 +180,7 @@ var app = new Vue({
 
             let newMessageObject = {
                 date: `${currentDate} ${hour}:${minute}`,
+                hour: `${hour}:${minute}`,
                 message: this.newMessageText,
                 status: 'sent'
             }
@@ -195,9 +196,31 @@ var app = new Vue({
             setTimeout (
                 () => {
                 this.contacts[this.indexChanged].messages.push(newMessageObjectReceived);
-            }, 3000)
-
-            
+            }, 3000) 
+        },
+        
+        filterContacts: function () {
+            this.contacts.forEach(element => {
+                if (element.name.toLowerCase().includes(this.filterText.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
+        },
+        mostraOpzione: function (index) {
+            console.log(`indice della freccia: ${index}`);
+            if (this.messageActive.index != false && this.messageActive.index != index) {
+                this.messageActive.show = false;
+                this.messageActive.index = true;
+            } else {
+                this.messageActive.show = (this.messageActive.show) ? false : true;
+                this.messageActive.index = index;
+            }
+        },
+        deleteMessage: function () {
+                const element = document.getElementById('remove');
+                element.remove(element);   
         }
     }
   })

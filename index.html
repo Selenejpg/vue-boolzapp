@@ -21,9 +21,10 @@
                         <!-- sezione con profilo utente -->
                     <div class="col-4 custom-padding">
                         <div class="d-flex border-custom justify-content-between align-items-center p-3">
-                            <div class="d-flex align-items-center ">
-                                <img src="./img-boolzap/avatar_io.jpg" alt="profilo" class="rounded-circle img-profile me-3">
-                                <span>Mariottide</span>
+                            <div class="d-flex flex-wrap align-items-center ">
+                                <img src="./img-boolzap/arriva-la-nuova-sitcom-di-maccio-capatonda-mariottide.jpeg" alt="profilo" class="rounded-circle w-20 img-fluid img-profile me-3">
+                                <span>Mariottide <br> <span class="fs-custom light-gray">...e se poi te ne penti?</span>
+                                </span>
                             </div>
                             <div>
                                 <i class="fa-solid light-gray fa-circle-notch me-2"></i>
@@ -42,8 +43,8 @@
                             </div>
                         </div>
                         <!-- search bar -->
-                        <div class="d-flex align-items-center p-1">
-                            <div class="input-group input-group-sm">
+                        <div class="d-flex align-items-center p-1" >
+                            <div class="input-group input-group-sm" @click="filterContacts(element, index)">
                                 <span class="input-group-text bg-white light-gray" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass"></i></span>
                                 <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             </div>
@@ -57,7 +58,7 @@
                                             <img :src="`./img-boolzap/avatar${element.avatar}.jpg`" alt="foto profilo di ${element.name}" class="rounded-circle img-profile me-3">
                                             <div>
                                                 <span>{{element.name}}</span>
-                                                <span class="d-block fs-custom  light-gray">Ultimo messaggio inviato</span>
+                                                <span class="d-block fs-custom light-gray">Ultimo messaggio inviato</span>
                                             </div>
                                         </div>
                                         <div>
@@ -87,9 +88,14 @@
                         </div>
                             <!--contenuto chats  -->
                         <div class="sfondo-chats h-100 p-3">
-                            <ul class="list-group list-group-flush d-flex flex-column">
-                                <li class="list-group-item rounded-3 mb-3 text-sent" :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received' " v-for="(element, index) in contacts[indexChanged].messages">
+                            <ul class="list-group list-group-flush d-flex justify-content-between flex-column">
+                                <li id="remove" class="list-group-item rounded-3 mb-3 text-sent" :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received' " v-for="(element, index) in contacts[indexChanged].messages">
                                     {{element.message}}
+                                    <select v-if="element.status == 'sent'" class="form-select custom-select" aria-label="Default select example">
+                                        <option class="bg-white" selected></option>
+                                        <option class="bg-white" @click="deleteMessage(index)" value="1">Rimuovi messaggio</option>
+                                        <option class="bg-white" value="2">Info messaggio</option>
+                                    </select>
                                     <p class="text-end fs-custom">{{element.date}}</p>
                                 </li>   
                             </ul>
