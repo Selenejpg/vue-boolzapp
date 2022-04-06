@@ -166,6 +166,7 @@ var app = new Vue({
     ],
     indexChanged: 0,
     newMessageText: '',
+    cerca: null,
 },
     methods: {
         changeContactsIndex: function(index){
@@ -201,26 +202,23 @@ var app = new Vue({
         
         filterContacts: function () {
             this.contacts.forEach(element => {
-                if (element.name.toLowerCase().includes(this.filterText.toLowerCase())) {
+                
+                let nome = element.name.toLowerCase();
+                let q = this.cerca.toLowerCase();
+                if (nome.indexOf(q) > -1) {
                     element.visible = true;
+                    console.log("cerca"+element.name);
                 } else {
                     element.visible = false;
-                }
+                    console.log(element.visible);
+                }         
+                
             });
         },
-        mostraOpzione: function (index) {
-            console.log(`indice della freccia: ${index}`);
-            if (this.messageActive.index != false && this.messageActive.index != index) {
-                this.messageActive.show = false;
-                this.messageActive.index = true;
-            } else {
-                this.messageActive.show = (this.messageActive.show) ? false : true;
-                this.messageActive.index = index;
-            }
-        },
-        deleteMessage: function () {
-                const element = document.getElementById('remove');
-                element.remove(element);   
+        deleteMessage: function(index, indexChanged) {
+                console.log(index); 
+                this.contacts[indexChanged].messages.splice(index, 1);
+                
         }
     }
   })

@@ -44,15 +44,15 @@
                         </div>
                         <!-- search bar -->
                         <div class="d-flex align-items-center p-1" >
-                            <div class="input-group input-group-sm" @click="filterContacts(element, index)">
+                            <div class="input-group input-group-sm">
                                 <span class="input-group-text bg-white light-gray" id="inputGroup-sizing-sm"><i class="fa-solid fa-magnifying-glass"></i></span>
-                                <input type="text" placeholder="Cerca o inizia una nuova chat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                               <input v-model="cerca" type="text" v-on:keyup="filterContacts"  placeholder="Cerca o inizia una nuova chat" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                             </div>
                         </div>
                         <!-- contenitore chats -->
-                        <div class="h-custom overflow-scroll">
+                        <div class="h-custom overflow-scroll"> 
                             <ul class="list-group list-group-flush h-custom-due">
-                                <li class="d-flex justify-content-between align-items-center h-custom-tre list-group-item p-3"  v-for="(element, index) in contacts" :key="element.avatar" :key="element.name" role="button" @click="changeContactsIndex(index)"> 
+                                <li class="d-flex justify-content-between align-items-center h-custom-tre list-group-item p-3"  v-for="(element, index) in contacts" v-if="element.visible" :key="element.avatar" :key="element.name" role="button" @click="changeContactsIndex(index)"> 
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="d-flex align-items-center ">
                                             <img :src="`./img-boolzap/avatar${element.avatar}.jpg`" alt="foto profilo di ${element.name}" class="rounded-circle img-profile me-3">
@@ -93,7 +93,7 @@
                                     {{element.message}}
                                     <select v-if="element.status == 'sent'" class="form-select custom-select" aria-label="Default select example">
                                         <option class="bg-white" selected></option>
-                                        <option class="bg-white" @click="deleteMessage(index)" value="1">Rimuovi messaggio</option>
+                                        <option class="bg-white" @click="deleteMessage(index, indexChanged)" value="1">Rimuovi messaggio</option>
                                         <option class="bg-white" value="2">Info messaggio</option>
                                     </select>
                                     <p class="text-end fs-custom">{{element.date}}</p>
