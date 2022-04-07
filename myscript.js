@@ -215,6 +215,16 @@ var app = new Vue({
                 
             });
         },
+        mostraOpzione: function (index) {
+            console.log(`indice della freccia: ${index}`);
+            if (this.messageActive.index != false && this.messageActive.index != index) {
+                this.messageActive.show = false;
+                this.messageActive.index = true;
+            } else {
+                this.messageActive.show = (this.messageActive.show) ? false : true;
+                this.messageActive.index = index;
+            }
+        },
         deleteMessage: function(index, indexChanged) {
                 console.log(index); 
                 this.contacts[indexChanged].messages.splice(index, 1);
